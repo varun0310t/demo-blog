@@ -23,7 +23,7 @@ export default function AdminDashboard() {
         setPosts(data);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setError('Failed to load posts');
         setLoading(false);
       });
@@ -41,7 +41,7 @@ export default function AdminDashboard() {
       } else {
         throw new Error('Failed to delete post');
       }
-    } catch (err) {
+    } catch {
       alert('Error deleting post');
     }
   };

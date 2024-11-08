@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, use } from 'react';
-import { Metadata } from 'next';
+import Image from 'next/image';
 
 interface Post {
   id: number;
@@ -47,10 +47,12 @@ export default function Page({ params }: Props) {
 
         {post.image_url?.trim() && (
           <div className="mb-8 rounded-lg overflow-hidden shadow-lg">
-            <img 
+            <Image 
               src={post.image_url} 
               alt={post.title} 
               className="w-full h-auto object-cover"
+              width={800} // specify appropriate width
+              height={600} // specify appropriate height
             />
           </div>
         )}

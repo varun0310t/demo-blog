@@ -58,7 +58,7 @@ export default function EditPost({ params }: Props) {
         setPost(data);
         editor?.commands.setContent(data.content);
         setLoading(false);
-      } catch (err) {
+      } catch {
         setError('Failed to load post');
         setLoading(false);
       }
@@ -84,7 +84,7 @@ export default function EditPost({ params }: Props) {
 
       if (!response.ok) throw new Error('Failed to update post');
       router.push('/admin');
-    } catch (err) {
+    } catch {
       setError('Failed to update post');
     } finally {
       setSaving(false);
